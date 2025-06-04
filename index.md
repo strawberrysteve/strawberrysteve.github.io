@@ -10,7 +10,12 @@ Hello! This website is mostly for random physics content.
 
 Here is a photo of me :)
 
-![Self portrait](images/steve_pic.jpg)
+<!-- in index.md -->
+<img
+  src="images/steve_pic.jpg"
+  alt="Self Portrait"
+  style="max-width: 400px; height: auto;"
+/>
 
 
 
