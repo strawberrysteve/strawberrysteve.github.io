@@ -17,6 +17,17 @@ url                      : https://strawberrysteve.github.io # the base hostname
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "strawberrysteve/strawberrysteve.github.io"
 
+navigation:
+  - title: "Home"
+    url: "/"
+  - title: "Problems"
+    url: "/problems/"
+  - title: "Notes"
+    url: "/notes/"   
+  - title: "Misc"
+    url: "/misc/"         
+  # etc.
+
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
 #               Additional customization can be done by editing /_includes/author-profile.html
