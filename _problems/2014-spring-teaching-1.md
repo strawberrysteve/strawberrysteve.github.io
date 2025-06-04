@@ -1,6 +1,6 @@
 ---
 title: "Teaching experience 1"
-collection: teaching
+collection: problems
 type: "Undergraduate course"
 permalink: /problems
 venue: "University 1, Department"
