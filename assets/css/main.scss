@@ -49,3 +49,52 @@
   padding-left: 1rem;
   padding-right: 1rem;
 }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Override: Float the author-profile to the side of list pages
+───────────────────────────────────────────────────────────────────────────── */
+
+.page-header {
+  display: flex;
+  align-items: flex-start; /* top-align avatar and title */
+  flex-wrap: wrap;         /* allow wrapping on narrow screens */
+  margin-bottom: 2rem;     /* extra gap below header */
+}
+
+.author-profile {
+  flex: 0 0 200px;       /* always 200px wide, don’t shrink or grow */
+  margin-right: 2rem;    /* spacing between avatar and title */
+  position: relative;    /* undo any absolute/overlap positioning */
+  top: auto;
+  left: auto;
+  width: 200px;          /* ensure consistent width */
+}
+
+.page-header .page-main {
+  flex: 1;               /* take up whatever space remains */
+  min-width: 0;          /* allow text to wrap on narrow screens */
+}
+
+/* Remove any extra top margin from the title so it doesn’t get pushed down */
+.page-header .page-title,
+.page-header .list-header {
+  margin-top: 0;
+}
+
+/* Mobile fallback: stack avatar above title on narrow screens */
+@media (max-width: 600px) {
+  .page-header {
+    flex-direction: column; /* avatar on top, title/content below */
+  }
+  .author-profile {
+    margin-right: 0;
+    margin-bottom: 1rem; /* gap under avatar */
+    width: 100%;         /* full width on phone */
+    flex: none;
+  }
+  .page-header .page-main {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
