@@ -50,17 +50,5 @@
   padding-right: 1rem;
 }
 
-/* ─────────────────────────────────────────────────────────────────────────────
-   HIDE the entire sidebar (and thus the author‐profile) site‐wide
-───────────────────────────────────────────────────────────────────────────── */
-aside.sidebar {
-  display: none !important;
-}
-/* If your theme’s sidebar uses a different selector, also try: */
-.sidebar, 
-.author-profile, 
-.profile-widget {
-  display: none !important;
-}
 
 
