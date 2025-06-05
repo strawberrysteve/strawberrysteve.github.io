@@ -3,7 +3,6 @@ title: "This is a test"
 layout: single
 categories: [Math]
 author_profile: false
-classes: wide
 ---
 
 Below is a concise set of notes on my feelings today. This is a test.
