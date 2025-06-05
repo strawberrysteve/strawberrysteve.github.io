@@ -1,11 +1,11 @@
 ---
-title: "Paper Title Number 1"
+title: "Introduction"
 collection: notes
-category: manuscripts
+category: CFT
 permalink: /notes
-excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
-date: 2009-10-01
-venue: 'Journal 1'
+excerpt: 'This is a test note'
+date: 2025-06-04
+
 slidesurl: 'http://academicpages.github.io/files/slides1.pdf'
 paperurl: 'http://academicpages.github.io/files/paper1.pdf'
 bibtexurl: 'http://academicpages.github.io/files/bibtex1.bib'
