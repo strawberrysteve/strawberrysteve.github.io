@@ -5,8 +5,5 @@ collection: portfolio
 ---
 
 Many people think that "football" is an American sport. They couldn't be farther from the truth! Look how even in Sub-Saharan Africa this wild lion tosses the pig skin. I think football is something inherent to all mammals. 
-<img
-  src="images/Fatcat.png"
-  alt="Wild Lion"
-  style="max-width: 400px; height: auto;"
-/>
+
+![Wild Lion](/images/Fatcat.png){: style="max-width:400px; height:auto;" }
