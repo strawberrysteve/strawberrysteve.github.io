@@ -12,6 +12,13 @@ main:
     url: /
   - title: "Notes"
     url: /notes/
+    children:
+	- title: "CFT"
+ 	  url: "/categories/cft/"
+	- title: "Math"
+	  url: "/categories/math/"
+	- title: "Quantum Computing"
+          url: "/categories/quantumcomputing/"
   - title: "Misc"
     url: /misc/    
   - title: "Problems"
