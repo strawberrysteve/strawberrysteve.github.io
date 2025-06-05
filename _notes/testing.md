@@ -1,12 +1,12 @@
 ---
-title: "This is a test"
+title: "How I'm feeling now"
 layout: single
 categories: [math]
 excerpt: "How I love hot dogs, I long for one each day"
 author_profile: false
 ---
 
-Below is a concise set of notes on my feelings today. This is a test.
+Below is a concise set of notes on my feelings today. I hope someone can relate
 
 [📄 **Download the PDF**]({{ '/files/TEST.pdf' | relative_url }})
 
