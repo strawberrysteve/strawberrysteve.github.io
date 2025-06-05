@@ -2,6 +2,7 @@
 title: "This is a test"
 layout: single
 categories: [math]
+excerpt: "How I love hot dogs, I long for one each day"
 author_profile: false
 ---
 

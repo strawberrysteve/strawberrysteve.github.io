@@ -1,5 +1,5 @@
 ---
-layout: single        <!-- keeps the Minimal-Mistakes frame -->
+layout: single        # uses the Minimal-Mistakes “single” frame
 ---
 
 {% assign cat     = page.category %}
@@ -13,6 +13,12 @@ layout: single        <!-- keeps the Minimal-Mistakes frame -->
     <a href="{{ doc.url | relative_url }}">{{ doc.title }}</a>
     {% if doc.date %}
       <span class="archive-meta">{{ doc.date | date: "%b %e %Y" }}</span>
+    {% endif %}
+
+    {% if doc.excerpt %}
+      <p class="archive__item-excerpt">{{ doc.excerpt | markdownify }}</p>
+    {% elsif doc.description %}
+      <p class="archive__item-excerpt">{{ doc.description | markdownify }}</p>
     {% endif %}
   </li>
 {% endfor %}
