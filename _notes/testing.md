@@ -1,7 +1,7 @@
 ---
 title: "This is a test"
 layout: single
-categories: [Math]
+categories: [math]
 author_profile: false
 ---
 
