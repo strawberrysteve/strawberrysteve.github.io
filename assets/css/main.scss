@@ -52,3 +52,41 @@
 
 
 
+/* ─────────────────────────────────────────────────────────────────────────────
+   SHIFT SIDEBAR LEFT BY 50px
+───────────────────────────────────────────────────────────────────────────── */
+
+aside.sidebar {
+  /* Move it 50px farther left than its normal float: */
+  margin-left: -50px !important;
+  /* Alternatively, you could use position: relative; left: -50px; */
+  /* position: relative !important;
+     left: -50px !important; */
+}
+
+/* Now reduce the content’s left-margin by the same 50px so it’s not pushed too far right: */
+.page-header,
+.page-content,
+.page-main,
+.main-content,
+.content-area {
+  margin-left: calc(220px - 50px) !important;
+  /* If you previously used a fixed pixel value, change 220px → 220px - 50px = 170px */
+  /* e.g. margin-left: 170px !important; */
+}
+
+/* Mobile fallback (keep sidebar full-width on small screens): */
+@media (max-width: 600px) {
+  aside.sidebar {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  .page-header,
+  .page-content,
+  .page-main,
+  .main-content,
+  .content-area {
+    margin-left: 0 !important;
+  }
+}
+
