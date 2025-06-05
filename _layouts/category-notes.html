@@ -5,7 +5,7 @@ layout: single        # uses the Minimal-Mistakes “single” frame
 {% assign cat     = page.category %}
 {% assign entries = site.notes | where_exp:'d','d.categories contains cat' %}
 
-<h1>{{ cat | capitalize }} Notes</h1>
+
 
 <ul class="archive-list">
 {% for doc in entries %}
