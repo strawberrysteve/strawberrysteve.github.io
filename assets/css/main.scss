@@ -50,51 +50,49 @@
   padding-right: 1rem;
 }
 
+
+
 /* ─────────────────────────────────────────────────────────────────────────────
-   Override: Float the author-profile to the side of list pages
+   OVERRIDE: Force author‐profile out of the header overlap and float it left
 ───────────────────────────────────────────────────────────────────────────── */
-
-.page-header {
-  display: flex;
-  align-items: flex-start; /* top-align avatar and title */
-  flex-wrap: wrap;         /* allow wrapping on narrow screens */
-  margin-bottom: 2rem;     /* extra gap below header */
-}
-
+  
+/* 1) Make sure the author box is static/flow/float instead of absolute/overlap */
 .author-profile {
-  flex: 0 0 200px;       /* always 200px wide, don’t shrink or grow */
-  margin-right: 2rem;    /* spacing between avatar and title */
-  position: relative;    /* undo any absolute/overlap positioning */
-  top: auto;
-  left: auto;
-  width: 200px;          /* ensure consistent width */
+  position: static !important;
+  float: left !important;
+  width: 200px !important;       /* fix its width */
+  margin-right: 2rem !important; /* gap between avatar and title */
+  top: auto !important;          /* undo any “top: –…” from theme */
+  left: auto !important;         /* undo any “left: –…” from theme */
 }
 
-.page-header .page-main {
-  flex: 1;               /* take up whatever space remains */
-  min-width: 0;          /* allow text to wrap on narrow screens */
+/* 2) Reset any parent container that was forcing overlap */
+/*    (often the theme uses .page-header or .list-header to overlap elements) */
+.page-header,
+.list-header {
+  position: relative !important;
+  overflow: hidden; /* ensure children flow normally */
+  padding-left: 0 !important; /* remove any negative left‐padding */
+  margin-top: 2rem; /* add a little extra top space if needed */
 }
 
-/* Remove any extra top margin from the title so it doesn’t get pushed down */
-.page-header .page-title,
-.page-header .list-header {
-  margin-top: 0;
+/* 3) Push the main title/content to the right of the author box */
+.page-header .page-main,
+.list-header .page-main {
+  margin-left: 220px !important; /* 200px (avatar) + 2rem gap */
 }
 
-/* Mobile fallback: stack avatar above title on narrow screens */
+/* 4) On very narrow screens, revert to stacking vertically */
 @media (max-width: 600px) {
-  .page-header {
-    flex-direction: column; /* avatar on top, title/content below */
-  }
   .author-profile {
-    margin-right: 0;
-    margin-bottom: 1rem; /* gap under avatar */
-    width: 100%;         /* full width on phone */
-    flex: none;
+    float: none !important;
+    width: 100% !important;
+    margin-right: 0 !important;
+    margin-bottom: 1rem !important;
   }
-  .page-header .page-main {
-    width: 100%;
-    margin-left: 0;
+  .page-header .page-main,
+  .list-header .page-main {
+    margin-left: 0 !important;
   }
 }
 
