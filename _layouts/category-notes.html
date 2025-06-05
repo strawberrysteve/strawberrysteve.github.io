@@ -1,0 +1,25 @@
+{% raw %}{% comment %}
+  Layout: category-notes
+  Lists every document in the _notes collection whose
+  front-matter ‘categories’ array contains page.category
+{% endcomment -%}
+
+---
+layout: single              # uses Minimal-Mistakes’ “single” as the frame
+---
+
+{% assign cat = page.category %}
+{% assign entries = site.notes | where_exp: "d", "d.categories contains cat" %}
+
+<h1>{{ cat | capitalize }} Notes</h1>
+
+<ul class="archive-list">
+{% for doc in entries %}
+  <li>
+    <a href="{{ doc.url | relative_url }}">{{ doc.title }}</a>
+    {%- if doc.date %} <span class="archive-meta">{{ doc.date | date: "%b %e %Y" }}</span>{% endif -%}
+  </li>
+{% endfor %}
+</ul>
+{% endraw %}
+
