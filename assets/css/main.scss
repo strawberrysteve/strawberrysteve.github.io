@@ -94,3 +94,44 @@
 }
 
 
+/* ─────────────────────────────────────────────────────────────────────────────
+   FORCE the sidebar back into normal flow (override any inline “sticky” JS)
+───────────────────────────────────────────────────────────────────────────── */
+
+/* 1) Make .sidebar.sticky a static element—ignore any inline style or JS hack */
+.sidebar.sticky {
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  margin-left: 0 !important;
+  width: 200px !important;       /* keep its normal width */
+  height: auto !important;       /* prevent any fixed-height trick */
+  overflow: visible !important;  /* ensure its contents show normally */
+}
+
+/* 2) Ensure the main content area sits to the right of that 200px sidebar */
+.archive {
+  margin-left: 200px !important; /* exactly the width of .sidebar.sticky */
+}
+
+/* 3) If your theme puts the page title/header outside of .archive, push it too */
+.page__content #main .page-header,
+.page__content #main .page-main {
+  margin-left: 200px !important;
+}
+
+/* 4) Mobile fallback: when the screen is narrow, let the sidebar stack above */
+@media (max-width: 600px) {
+  .sidebar.sticky {
+    position: static !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-bottom: 1rem !important;
+  }
+  .archive,
+  .page__content #main .page-header,
+  .page__content #main .page-main {
+    margin-left: 0 !important;
+  }
+}
+
