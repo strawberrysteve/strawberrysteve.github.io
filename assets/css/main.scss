@@ -51,42 +51,46 @@
 }
 
 
-
 /* ─────────────────────────────────────────────────────────────────────────────
-   SHIFT SIDEBAR LEFT BY 50px
+   SHIFT .sidebar.sticky 50px FARTHER LEFT, AND PUSH .archive RIGHT
 ───────────────────────────────────────────────────────────────────────────── */
 
-aside.sidebar {
-  /* Move it 50px farther left than its normal float: */
-  margin-left: -50px !important;
-  /* Alternatively, you could use position: relative; left: -50px; */
-  /* position: relative !important;
-     left: -50px !important; */
+/* 1) Move the sidebar‐wrapper left by 50px */
+.sidebar.sticky {
+  position: relative !important;  /* undo any absolute/fixed positioning */
+  left: -50px !important;         /* shift 50px farther left */
+  margin-left: 0 !important;      /* clear any left margin the theme added */
+  width: 200px !important;        /* keep it at its normal width */
 }
 
-/* Now reduce the content’s left-margin by the same 50px so it’s not pushed too far right: */
-.page-header,
-.page-content,
-.page-main,
-.main-content,
-.content-area {
-  margin-left: calc(220px - 50px) !important;
-  /* If you previously used a fixed pixel value, change 220px → 220px - 50px = 170px */
-  /* e.g. margin-left: 170px !important; */
+/* 2) Push the main archive/content over by (200px - 50px) = 150px */
+.archive {
+  margin-left: 150px !important;
+  /* If the original margin was a fixed 220px, set 220px - 50px = 170px instead:
+     margin-left: 170px !important;  
+     but in most versions of AcademicPages the "archive" container is exactly
+     200px from the left (the width of the sidebar), so 150px works. */
 }
 
-/* Mobile fallback (keep sidebar full-width on small screens): */
+/* 3) Also shift the page‐header if it wraps outside of .archive */
+.page__content #main .page-header,
+.page__content #main .page-main {
+  margin-left: 150px !important;
+}
+
+/* 4) Mobile fallback: stack the sidebar on top again */
 @media (max-width: 600px) {
-  aside.sidebar {
-    margin-left: 0 !important;
+  .sidebar.sticky {
+    left: 0 !important;
     width: 100% !important;
+    margin-left: 0 !important;
+    margin-bottom: 1rem !important;
   }
-  .page-header,
-  .page-content,
-  .page-main,
-  .main-content,
-  .content-area {
+  .archive,
+  .page__content #main .page-header,
+  .page__content #main .page-main {
     margin-left: 0 !important;
   }
 }
+
 
