@@ -51,9 +51,15 @@
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   HIDE author‐profile SITE-WIDE
+   HIDE the entire sidebar (and thus the author‐profile) site‐wide
 ───────────────────────────────────────────────────────────────────────────── */
-.author-profile {
+aside.sidebar {
+  display: none !important;
+}
+/* If your theme’s sidebar uses a different selector, also try: */
+.sidebar, 
+.author-profile, 
+.profile-widget {
   display: none !important;
 }
 
