@@ -28,6 +28,9 @@ layout: compress
     </div>
 
     {% include scripts.html %}
-
+{% comment %}
+Load our sidebar‐fix script so the theme’s sticky JS is overridden.
+{% endcomment %}
+    <script src="{{ "/assets/js/sidebar-fix.js" | relative_url }}"></script
   </body>
 </html>
