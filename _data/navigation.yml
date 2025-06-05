@@ -14,11 +14,11 @@ main:
     url: /notes/
     children:
 	- title: "CFT"
- 	  url: "/categories/cft/"
+ 	  url: /categories/cft/
 	- title: "Math"
-	  url: "/categories/math/"
+	  url: /categories/math/
 	- title: "Quantum Computing"
-          url: "/categories/quantumcomputing/"
+          url: /categories/quantumcomputing/
   - title: "Misc"
     url: /misc/    
   - title: "Problems"
