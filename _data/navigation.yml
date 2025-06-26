@@ -18,9 +18,9 @@ main:
       - title: "Math"
         url: /notes/math/
       - title: "Quantum Computing"
-        url: /notes/quantumcomputing
+        url: /notes/quantumcomputing/
       - title: "Thermodynamics"
-        url: /notes/thermodynamics
+        url: /notes/thermodynamics/
   - title: "Misc"
     url: /misc/    
   - title: "Problems"
